@@ -32,6 +32,7 @@ namespace WebApplication1.Controllers
             myStack.Push("!");
             PrintValues(myStack);
 
+
             //Мартица
             Matrix myMatrix = new Matrix();
             myMatrix.Rotate(30);
@@ -39,12 +40,23 @@ namespace WebApplication1.Controllers
             myMatrix.Translate(5, 0, MatrixOrder.Append);
 
             //Массив
-            int[] array;
-
-
+            int[] array = {1, 2, 3, 4};
+            int x = 0;
+            try
+            {
+                int y = 100 / x;
+            }
+            catch (ArithmeticException e)
+            {
+                Console.WriteLine("ArithmeticException Handler: {0}", e.ToString());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Generic Exception Handler: {0}", e.ToString());
+            }
 
             Console.WriteLine("Hello, world!");
-            Console.ReadKey(); 
+            //Console.ReadKey(); 
             ViewBag.Title = "Home Page";
             return View();
         }

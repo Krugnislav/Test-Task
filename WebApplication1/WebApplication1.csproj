@@ -39,7 +39,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.37.4345.34101\lib\net20\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Cassette">
+      <HintPath>..\packages\Cassette.1.0.0\lib\net40-Client\Cassette.dll</HintPath>
+    </Reference>
+    <Reference Include="Jurassic">
+      <HintPath>..\packages\Jurassic.2.1.0\lib\net40\Jurassic.dll</HintPath>
+    </Reference>
+    <Reference Include="Knoema.Localization.Cassette">
+      <HintPath>..\packages\Knoema.Localization.Cassette.0.1.66\lib\net40\Knoema.Localization.Cassette.dll</HintPath>
+    </Reference>
+    <Reference Include="Knoema.Localization.Core">
+      <HintPath>..\packages\Knoema.Localization.Core.0.1.66\lib\net40\Knoema.Localization.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Knoema.Localization.EFProvider">
+      <HintPath>..\packages\Knoema.Localization.EFProvider.0.1.66\lib\net40\Knoema.Localization.EFProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Knoema.Localization.Mvc">
+      <HintPath>..\packages\Knoema.Localization.Mvc.0.1.66\lib\net40\Knoema.Localization.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.3.2.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
