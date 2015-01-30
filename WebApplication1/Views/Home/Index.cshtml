@@ -1,0 +1,155 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="bs-example">
+
+                    <h4>Drop down + checkboxes</h4>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                            Dropdown
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">
+                                    <label>
+                                        <input type="checkbox"> Action
+                                    </label>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">
+                                    <label>
+                                        <input type="checkbox"> Another action
+                                    </label>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">
+                                    <label>
+                                        <input type="checkbox"> Something else
+                                    </label>
+                                </a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#">
+                                    <label>
+                                        <input type="checkbox"> Something else 2
+                                    </label>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h4>Basic Date Range Picker</h4>
+                <div class="well">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <div class="input-prepend input-group">
+                                        <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span><input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="01/01/2015 - 01/23/2015" />
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('#reservation').daterangepicker(null, function (start, end, label) {
+                                console.log(start.toISOString(), end.toISOString(), label);
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Slider</h4>
+                <div class="well">
+                    Filter by price interval:
+                    <b>€ 10</b>
+                    <input id="ex2" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="3" data-slider-value="[250,450]" />
+                    <b>€ 1000</b>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $("#ex2").slider({});
+                        })
+                    </script>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-unstyled">
+                    <li><a data-placement="bottom" data-toggle="popover" data-title="Login" data-container="body" type="button" data-html="true" href="#" id="login">Login</a></li>
+                    <div id="popover-content" class="hide">
+                        Filter by price interval: <b>€ 10</b> 
+                        <div>
+                            <input id="ex3" type="text" class="col-md-10" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]" /> 
+                        </div>
+                        <b>€ 1000</b>
+                    </div>
+                </ul>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $("#ex3").slider({});
+
+                            $("[data-toggle=popover]").popover({
+                                html: true,
+                                content: function () {
+                                    return $('#popover-content').html();
+                                }
+                            });
+                        });
+                    </script>
+            </div>
+        </div>
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/datepicker")
+</body>
+</html>
